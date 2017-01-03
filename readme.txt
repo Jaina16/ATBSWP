@@ -1,77 +1,151 @@
 ####---------------- Automate the boring stuff with Python ----------------####
 
-1. What does the code for an empty dictionary look like?
-
-emptyDict = {}
-
 ###### ================================================================= ######
 
-2. What does a dictionary value with a key 'foo' and a value 42? look like?
-
-myDict = {'foo': 42}
-
-###### ================================================================= ######
-
-3. What is the main difference between a dictionary and a list?
-
-Dictionaries have the capability to contain key and value pairs whereas
-lists can only contain values.
-
-###### ================================================================= ######
-
-4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?
-
-You get a KeyError error
-
-###### ================================================================= ######
-
-5. If a dictionary is stored in spam, what is the difference between the
-   expressions 'cat' in spam and 'cat' in spam.keys()?
-
-The expressions 'cat' in spam and 'cat' in spam.keys() tests if the
-dictionary spam has a key that is labelled 'cat'. There is no difference
-it is the same expression expressed more explicitly.
-
-###### ================================================================= ######
-
-6. If a dictionary is stored in spam, what is the difference between the
-   expressions 'cat' in spam and 'cat' in spam.values()?
+1. What are escape characters?
 
 Solution:
 ---------
 
-The expression 'cat' in spam is a condition that tests for a key labelled
-'cat' in the dictionary spam, whereas the condition 'cat' in spam.values()
-checks if the dictionary spam has a value of 'cat'.
+Escape characters are a sequence of characters that allow inserting of 
+characters that are otherwise difficult or impossible to type in.
+
+For example, the new-line character '\n', a backslash '\\',
+a carriage return '\r', a vertical tab '\v', a tab '\t', etc.
 
 ###### ================================================================= ######
 
-7. What is a shortcut for the following code?
-
-    if 'color' not in spam:
-        spam['color'] = 'black'
+2. What do the \n and \t escape characters represent?
 
 Solution:
 ---------
 
-spam.setdefault('color', 'black')
-
-refer: characterCount.py
+The \n escape character reperesents a new-line character.
+The \t escape character represents a tab (usually consists of 4 spaces).
 
 ###### ================================================================= ######
 
-8. What module and function can be used to "pretty print" dictionary values?
+3. How can you put a \ backslash character in a string?
 
 Solution:
 ---------
 
-import pprint
+By using two backslashes, as in \\. 
 
-myDict = {'key': 'value', [keys: values]}
+###### ================================================================= ######
 
-pprint.pprint()
+4. The string value "Howl's Moving Castle" is a valid string. Why isn't
+it a problem that the single quote character in the word Howl's isn't
+escaped?
 
-refer: prettyCharacterCount.py
+Solution:
+---------
+
+This is legal Python syntax if you are using double quotes to create a
+string literal.
+
+###### ================================================================= ######
+
+5. If you don't want to put \n in your string, how can you write a 
+string with new lines in it?
+
+Solution:
+---------
+
+You can create multi line string literals using triple quotes as in
+''' or """. String literals that are created using a pair of these 
+triple quotes, preserve the text formatting as it is. That is each
+new line appears as is, without having to use any escape characters.
+Other escape characters such a ' or " can also be included within
+the string literal without using escape characters. Such string
+literals are also referred to as "raw strings". 
+
+Tip: A raw string can also be created by using single quotation marks
+(' or "), but it has to be pre-fixed with r just before the string
+literal begins as in r"this is a \ raw string!!". These are useful
+while working with regular expressions.
+
+###### ================================================================= ######
+
+6. What do the following expressions eavaluate to?
+
+    * 'Hello World!'[1]
+    * 'Hello World!'[0:5]
+    * 'Hello World!'[:5]
+    * 'Hello World!'[3:]
+
+Solution:
+---------
+
+>>> 'Hello World!'[1]
+'e'
+>>> 'Hello World'[0:5]
+'Hello'
+>>> 'Hello World!'[:5]
+'Hello'
+>>> 'Hello World!'[3:]
+'lo World!'
+
+###### ================================================================= ######
+
+7. What do the following expressions evaluate to?
+
+ *  'Hello'.upper()
+ *  'Hello'.upper().isupper()
+ *  'Hello'.upper().lower()
+
+Solution:
+---------
+
+>>> 'Hello'.upper()
+'HELLO'
+>>> 'Hello'.upper().isupper()
+True
+>>> 'Hello'.upper().lower()
+'hello'
+
+###### ================================================================= ######
+
+8. What do the following expression evaluate to?
+
+ *  'Remember, remember, the fifth of November.'.split()
+ *  '-'.join('There can be only one.'.split())
+
+Solution:
+---------
+
+>>> 'Remember, remember, the fifth of November.'.split()
+['Remember,', 'remember,', 'the', 'fifth', 'of', 'November.']
+>>> '-'.join('There can be only one.'.split())
+'There-can-be-only-one.'
+
+###### ================================================================= ######
+
+9. What string methods can you use to right-justify, left-justify, and
+center a string?
+
+Solution:
+---------
+
+rjust() can be used to right-justify a string
+
+ljust() can be used to left-justify a string
+
+center() can be used to center a string
+
+###### ================================================================= ######
+
+10. How can you trim whitespace characters from the beginning or end of
+a string?
+
+Solution:
+---------
+
+lstrip() can be used to trim whitespace on the left side of a string
+
+rstrip() can be used to trim whitespace on the right side of a string
+
+strip() can be used to trim whitespace on both sides of a string
 
 ###### ================================================================= ######
 
